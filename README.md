@@ -47,6 +47,6 @@ The back end of the extension will allow you to test your API credentials but no
 
 To test we recommend that you navigate to a page where you know there is an image link to the 'made' folder, navigate to that image over ftp, note the size of the image and then delete it. Refreshing the web page will then trigger CE Image to re-size the image* and in turn trigger the extension. Refresh your ftp view and if everything is working correctly then the image should be back in the folder and with a smaller size** than previous.
 
-* In some cases with heavy template caching if the static file is served it will assume that the image still exists and you may see broken image tags on the page. To resolve this you will need to refresh the caches for these pages.
+*In some cases with heavy template caching if the static file is served it will assume that the image still exists and you may see broken image tags on the page. To resolve this you will need to refresh the caches for these pages.
 
-** Not every image can be crushed by Kraken, see their docs for more information.
+**Not every image can be crushed by Kraken, see their docs for more information.
