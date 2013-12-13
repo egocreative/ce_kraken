@@ -96,10 +96,10 @@ class Ce_kraken_ext {
 		$kraken_api_secret = isset($current['kraken_api_secret']) ? $current['kraken_api_secret'] : '';
 		$vars['settings']['kraken_api_secret'] = form_input('kraken_api_secret', $kraken_api_secret);
 
-		$path_to_made = isset($current['path_to_made']) ? $current['path_to_made'] : '';
+		$path_to_made = isset($current['path_to_made']) ? $current['path_to_made'] : @$this->EE->config->item('ce_image_cache_dir');
 		$vars['settings']['path_to_made'] = form_input('path_to_made', $path_to_made);
 
-		$url_to_made = isset($current['url_to_made']) ? $current['url_to_made'] : '';
+		$url_to_made = isset($current['url_to_made']) ? $current['url_to_made'] : @$this->EE->config->item('ce_image_cache_dir');
 		$vars['settings']['url_to_made'] = form_input('url_to_made', $url_to_made);
 
 		if (isset($_GET['result'])) {
@@ -212,7 +212,9 @@ class Ce_kraken_ext {
 
 		$this->settings = array(
 	        'kraken_api_key'		=> '',
-	        'krkaen_api_secret'		=> ''
+	        'krkaen_api_secret'		=> '',
+	        'path_to_made'			=> @$this->EE->config->item('ce_image_cache_dir'),
+	        'url_to_made'			=> @$this->EE->config->item('ce_image_cache_dir')
 	    );
 
 		$hooks = array(
